@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src https://gwvoxdoitwmojdhrzecp.supabase.co; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>이기자 계정 삭제</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./account-delete.mjs"></script>
+</head>
+<body>
+<main>
+  <a href="../" rel="noreferrer">개인정보처리방침</a>
+  <h1>이기자 계정 삭제</h1>
+  <p>앱을 설치하지 않아도 계정 삭제를 요청할 수 있습니다.</p>
+  <p id="status" role="status" aria-live="polite">현재 웹 계정 삭제는 준비 중입니다.</p>
+  <noscript>이 화면은 JavaScript가 필요합니다. 문의: weneedsomeigija@outlook.com</noscript>
+
+  <section aria-labelledby="login-title">
+    <h2 id="login-title">1. 사용하던 계정 확인</h2>
+    <p>이기자에서 쓰던 카카오 계정으로 본인확인을 해 주세요. 카카오 아이디나 비밀번호를 이 화면에 입력하지 않습니다.</p>
+    <p class="note">본인확인 과정에서 인증 서비스의 로그인 기록이나 인증용 계정이 만들어질 수 있습니다. 이기자 계정을 새로 등록하거나 다른 기능에 동의하지는 않습니다.</p>
+    <button id="login" disabled>기존 카카오 계정으로 본인확인</button>
+    <button id="check-root" class="secondary" disabled>내 이기자 계정 상태 확인</button>
+    <button id="end-session" class="text-button" disabled>이 화면의 본인확인 종료</button>
+  </section>
+
+  <section id="scope" hidden aria-labelledby="scope-title">
+    <h2 id="scope-title">2. 삭제할 내용 확인</h2>
+    <p>이기자 계정과 연결된 서버의 사진 확인 자료, 선생·기억·리캡 관련 자료, 스쿼드 자료를 정리한 뒤 로그인용 인증 계정을 삭제합니다. 삭제가 시작되면 되돌릴 수 없습니다.</p>
+    <p>기기에만 저장된 차단 규칙·과업·경제 장부·리캡과 내보낸 파일, 이전 익명 선생 자료는 이 요청으로 삭제하지 않습니다. 카카오 계정 자체도 삭제하지 않습니다.</p>
+    <p class="note">보존 기간 안의 신고·처리 이력은 계정 연결을 제거한 뒤 남을 수 있습니다. 백업과 삭제 확인 기록은 별도 보존 정책을 따릅니다. 자세한 내용은 개인정보처리방침에서 확인해 주세요.</p>
+    <label><input id="scope-agree" type="checkbox"> 삭제 범위와 되돌릴 수 없다는 내용을 확인했습니다.</label>
+    <button id="review-delete" disabled>삭제 요청 전 마지막 확인</button>
+  </section>
+
+  <section id="confirm" hidden aria-labelledby="confirm-title">
+    <h2 id="confirm-title">3. 이 계정을 삭제할까요?</h2>
+    <p>지금 본인확인한 이기자 계정의 삭제를 요청합니다.</p>
+    <button id="submit-delete" class="danger" disabled>확인한 계정 삭제 요청</button>
+    <button id="cancel-delete" class="secondary">돌아가기</button>
+  </section>
+
+  <section id="receipt" hidden aria-labelledby="receipt-title">
+    <h2 id="receipt-title">삭제 결과 확인</h2>
+    <p id="receipt-state"></p>
+    <p id="receipt-expiry" class="note"></p>
+    <p class="note">이 탭에 보관된 정보는 이 요청의 결과만 확인할 수 있고, 삭제를 새로 요청할 권한은 없습니다. 로그인용 토큰은 저장하지 않습니다. 탭을 닫거나 브라우저 저장 정보를 지우면 결과 확인 정보가 사라질 수 있습니다.</p>
+    <button id="check-receipt" disabled>이 요청의 결과 다시 확인</button>
+    <button id="forget-receipt" class="text-button" disabled>이 탭의 결과 확인 정보 지우기</button>
+  </section>
+  <p class="help">도움이 필요하면 <a href="mailto:weneedsomeigija@outlook.com" rel="noreferrer">weneedsomeigija@outlook.com</a>으로 문의해 주세요. 비밀번호·인증 코드·로그인 토큰을 보내지 마세요.</p>
+</main>
+</body>
+</html>
